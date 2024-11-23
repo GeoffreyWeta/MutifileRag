@@ -1,9 +1,11 @@
 import os
 import json
 
+
 import streamlit as st
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import Chroma
+
 from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
@@ -47,12 +49,12 @@ def chat_chain(vectorstore):
 
 
 st.set_page_config(
-    page_title="Multi Doc Chat",
+    page_title="Tailored builed AI chatbot",
     page_icon = "📚",
     layout="centered"
 )
 
-st.title("📚 Multi Documents Chatbot")
+st.title("Tailored builed AI chatbot")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
